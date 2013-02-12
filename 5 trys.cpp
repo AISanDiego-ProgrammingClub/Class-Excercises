@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-
+//Jesus, Chris, your face. You have to do something about that. My God...
 //Arash put this code in here for fun
 
 int main()
