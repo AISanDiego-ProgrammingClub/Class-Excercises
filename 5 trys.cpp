@@ -7,6 +7,8 @@
 #include <ctime>
 using namespace std;
 
+//Arash put this code in here for fun
+
 int main()
 {
 	srand(static_cast<unsigned int>(time(0))); //seed random number generator
