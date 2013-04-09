@@ -1,0 +1,2759 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
+#include <conio.h>
+#include <Windows.h>
+using namespace std;
+using std::rand;
+
+class Gmon
+{
+public:
+  Gmon(const string& name = "", string move1 = "", string move2 = "", string move3 = "", string move4 = "", int attack1 = 0, int attack2 = 0, int attack3 = 0, int attack4 = 0, int health = 0, int experience = 0, int power = 0);
+	
+	string m_Name;
+	string m_Move1;
+	string m_Move2;
+	string m_Move3;
+	string m_Move4;
+	
+
+	int m_Attack1;
+	int m_Attack2;
+	int m_Attack3;
+	int m_Attack4;
+	int m_Health;
+	int m_Experience;
+	int m_Power;
+  
+	
+   
+	
+	
+	
+    void SetAttack1( int m_eHealth);
+	void SetAttack2( int m_eHealth);
+	void SetAttack3( int m_eHealth);
+	void SetAttack4( int m_eHealth);
+	
+	/*void SeteAttack(int m_Health);*/
+
+	int GetAttack1(int m_eHealth);
+	int GetAttack2(int m_eHealth);
+	int GetAttack3(int m_eHealth);
+	int GetAttack4(int m_eHealth);
+	
+
+	int GeteAttack1(int m_Health);
+	int GeteAttack2(int m_Health);
+	int GeteAttack3(int m_Health);
+	int GeteAttack4(int m_Health);
+    
+};
+Gmon::Gmon(const string& name, string move1, string move2, string move3, string move4, int attack1, int attack2 , int attack3, int attack4, int health, int experience, int power):
+		m_Name(name), m_Move1(move1), m_Move2(move2), m_Move3(move3), m_Move4(move4), m_Attack1(attack1), m_Attack2(attack2), m_Attack3(attack3), m_Attack4(attack4), m_Health(health), m_Experience(experience), m_Power(power)
+		{}
+class Emon : public Gmon // This means that Emon will use the variables in the public area of Gmon
+{
+public:
+Emon(const string& name = "", string move1 = "", string move2 = "", string move3 = "", string move4 = "", int attack1 = 0, int attack2 = 0, int attack3 = 0, int attack4 = 0, int ehealth = 0);
+		
+	
+	int m_eHealth;
+	int ehealth;
+		
+		 
+	};
+Emon::Emon(const string& name, string move1, string move2, string move3, string move4, int attack1, int attack2 , int attack3, int attack4, int ehealth):
+		Gmon (name,move1,move2,move3,move4,attack1,attack2 ,attack3,attack4), m_eHealth(ehealth)  //This means Emon will share the constructor with Gmon
+		{}
+
+
+		
+
+
+
+	 
+
+
+
+
+//DAVID THIS IS WHERE THE PROBLEM BEGINS!!!
+	Gmon Dog("Flare, the Pyro Dog", "Flaming Piss", "Fireball", "Ash Fart", "Volcanic Carchase",8,13,24,30,160,0,50);
+	Gmon Turtle("Oogway, the Lax Turtle", "Slow Wit", "Turtle Fur", "Shell Spin", "Kamikaze Half Shell Breakdance",9,14,22,35,175,0,50);
+	Gmon Plant("Bud, the Quick-Witted Plant", "Pulsating Vine", "Hydroponic Hypnosis", "...as a Kite", "Vulva Flytrap",8,13,20,27,140,0,50);
+	Emon EKitty("Kitty Kaaat", "Panic Pee", "Calculated Clawing", "Vicious Pounce", "Spaztic Maul",7,14,21,25,120);
+	Emon EBlob("Blob", "Slimy Slap", "Amorphous Absorption", "Enervating Envelop", "Insane in the Membrane",6,15,20,26,140);
+	Emon EBat("Ozzy", "Prepared Pierce", "Sucky Sucky", "Swarming Fangs", "Bite It's Freakin Head Off!",8,16,24,32,155);
+	Emon EGrr("Grr", "Jockey","Yut", "Shin kick","Fancy Pants",10,20,30,40,200);
+
+								
+								
+	int healthpotion;
+	int powerpotion;
+	int ironskinpotion;
+    int gems;
+
+	//ATTENTION HERE IS THE MAIN FUNCTION!!!
+	int main(char, int m_Health, int m_eHealth, int m_Power, int m_Healthpotion)
+
+	{
+	 
+    const int MaxItems = 10;
+    int numItems = 0;
+    string name1;
+	string Bag[MaxItems];
+    char personality = 'a' && 'b' && 'c';
+    char choice = 'a' && 'b';
+    char shopPick = 'a' || 'b' || 'c' ;
+    char healChoice = 'y' || 'n' ;
+    char boostChoice = 'y' || 'n';
+    char ironChoice = 'y' || 'n';
+    char shopExit= 'y' || 'n';
+	char xchoice = 'y' || 'n'; 
+    int RandomNumber = rand() % 6 + 1; 
+	srand(static_cast<unsigned int>(time(0)));	
+	int explore = rand()%10+ 1;
+
+	
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+cout << "\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n\n"
+		"\t\t   ---------------------------------------\n\a";
+system ("cls");  
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+cout << "\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n\n"
+		"\t\t   ---------------------------------------\n";
+system ("cls");  
+
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+cout << "\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n\n"
+		"\t\t   ---------------------------------------\n\a";
+system ("cls");  
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+cout << "\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n\n"
+		"\t\t   ---------------------------------------\n";
+system ("cls");  
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+cout << "\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n\n"
+		"\t\t   ---------------------------------------\n\a";
+system ("cls");  
+
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+cout << "\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n\n"
+		"\t\t   ---------------------------------------\n";
+system ("cls");  
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+cout << "\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n\n"
+		"\t\t   ---------------------------------------\n\a";
+system ("cls");  
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+cout << "\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n\n"
+		"\t\t   ---------------------------------------\n";
+system ("cls");  
+
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+cout << "\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n\n"
+		"\t\t   ---------------------------------------\n\a";
+system ("cls");  
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+cout << "\n\n\n\t\t   GGGGGGGGG  MM    MM  OOOOOOO  NN      N\n"                               
+        "\t\t   G          M M  M M  O     O  N N     N\n"  
+		"\t\t   G          M  MM  M  O     O  N  N    N\n"
+        "\t\t   G    GGGG  M      M  O     O  N   N   N\n"                               
+        "\t\t   G       G  M      M  O     O  N    N  N\n"                               
+        "\t\t   G       G  M      M  O     O  N     N N\n"                               
+        "\t\t   GGGGGGGGG  M      M  OOOOOOO  N      NN\n";
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),14);
+cout << "\t\t   ---------------------------------------\n";
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+cout << "\t\t    ~~~~NON-CONSENSUAL BOUSE EDITION~~~~~   \n\n";
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),14);
+cout << "\t LOL YOU'LL DIE          <^>(-.-)<^>         LOL LOL YOU'll DIE\n"
+        "\t                              -   \n\n\n\n\n\n\n\n\n\n\n"; 
+system ("pause");
+system ("cls");
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+
+   
+    cout << "Well, what do we have here?\n\n"; 
+    cout << "Welcome to the Gladiator Dome! Assume the position and prepare to get owned.\n\n"; 
+	cout <<	"This is Gladiator Monsters! G-Mon for short.\n\n";
+	cout << "Your job today is to have fun. A failure to do so will result in your immediate";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+	cout << " death.\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+	system ("pause");
+	system ("cls");
+	cout << "Stupid questions will not be tolerated and will result in your immediate";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+	cout << " death.\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+	cout << "Any questions? No? Ok, let me ask you some.\n\n";
+	system ("pause");
+	system ("cls");
+	cout << "By the way, any questions not answered in a timely fashion will result in your\nimmediate";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+	cout <<" death.\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+	system("pause");
+	system("cls");
+    //Obviously can be changed just trying to be creative.
+    
+    cout << "This one is fairly simple. Even a moron like you could get this one right.\n\n";
+	cout << "What is your name.";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),14);
+	cout << " Quickly!\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+	
+    cout << "Name: "; 
+	cin >> name1;
+		   system ("pause");
+	   system ("cls");
+    //name of character selected here
+    cout << "\n\n" <<name1 << "? Seriously? HAHAHA. Who in their right mind would name their child that?\n\n";
+		   system ("pause");
+	   system ("cls");
+    cout << "I'm afraid this will result in the immediate ";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+	cout << "death";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+	cout <<" of your parents.\n\n";
+	system ("pause");
+	system ("cls");
+
+        while ((personality != 'a') && (personality != 'b') && (personality != 'c'))
+        { //this while loop basically suggest if they pick anything other than a b or c then itll ask again.
+            
+    cout << "Now " << name1 << ", I hope, for your sake, that your skills in combat \naren't as pathetic as your name.\n\n"; 
+    cout << "So, " << name1 << ", treat this next question like one you would be asked on an \nonline dating website...\n\n";
+	system("pause");
+	system("cls");
+	cout << "...except answer this TRUTHFULLY. Failure to do so will... \nwell you get the idea by now.\n\n";
+	system("pause");
+	system ("cls");
+	cout << "How would you describe your personality? Not that I care, but I have \na job to do, so... hurry up!\n\nRemember your choice! \n\nI won't repeat the choices again!\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+    cout << "a. I'm a cutthroat, take no prisoners, sleep with one eye open, kind of person.\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+    cout << "b. I'm a cool, laid back, Corona commercial type chillin on the beach kind \nof person.\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+    cout << "c. I'm a rastafari, chill out and blaze wit my homies type mufugga.\n\n\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),14|12);
+	cout << "REMEMBER THE LETTER THAT CORRESPONDS TO YOUR CHOICE!!!\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		   system ("pause");
+	   system ("cls");
+	cout << "Personality (type 'a', 'b', or 'c') \n\nAny other answer and I will have to repeat myself.\n\nI don't like repeating myself, so if you value your life, \n\nFOLLOW THE RULES!!!\n\n";
+		   system ("pause");
+	   system ("cls");
+	cout << "Type 'a','b', or 'c' now. \n\nI SAID NOW: "; 
+    cin >> personality;
+		}
+	cout << "\n";
+	system("pause");
+	system ("cls");
+	cout << "By the way, the following monster descriptions are pathetic.\n\n";
+		   system ("pause");
+	   system ("cls");
+	cout <<	"I didn't write them...\n\n";
+		   system ("pause");
+	   system ("cls");
+	cout <<	"...my job is to read them...\n\n"; 
+		   system ("pause");
+	   system ("cls");
+	cout << "...and I have my eye on some new rims..\n\n";
+		   system ("pause");
+	   system ("cls");
+	cout << "...so don't blame me if they're corny as all hell.\n\n";
+	system ("pause");
+	system ("cls");
+	cout << "Also, the shopkeeper in this town... he's completely out of his damned mind. \nDon't trust him.\n\n";
+    system ("pause");
+	system ("cls");
+	cout << "He has a basement where he experiments on things like you.\n\n";
+	system ("pause");
+	system ("cls");
+	cout << "Have you ever been probed?\n\n";
+		   system ("pause");
+	   system ("cls");
+	cout<< "It's a bad time...\n\n"; 
+	system ("pause");
+	system ("cls");
+	cout << "...At least that't what I've heard...\n\n";
+	system ("pause");
+	system ("cls");
+		
+    //personality choice chooses what monster you get. A more fun way of choosing
+	
+
+        
+		
+    switch(personality)
+	{
+	case 'a':
+        {
+			
+            cout << "You have selected";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+			cout << " Flare the Pyro Dog G-Mon!\n\n\n";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+            
+            cout << "Flare possesses the abilities of a ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),14);
+			cout << "volcano! ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+			cout << "He can engulf any opponent into\n";
+			cout << "flames in a matter of seconds!\n\n";
+            cout << "Treat him well...\n\n";
+			system ("pause");
+			system ("cls");
+			cout << "...or die a grisly death.\n\n";
+			system ("pause");
+			system ("cls");
+			break;
+            // This is the fire type G-Mon
+        }
+		
+	case 'b':
+    {
+		
+        cout << "You have selected ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "Oogway the Lax Turtle type G-Mon!\n\n\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+        
+        cout << "Oogway possesses the abilities of the";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " shining ocean.";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << " His defensive skills\n";
+		cout << "make him a heavy beast to push over, a great G-Mon to relax with on the beach.\n";
+        cout << "Treat him well...\n\n";
+		system ("pause");
+		system ("cls");
+		cout << "...or die a grisly death.\n\n";
+		system ("pause");
+		system ("cls");
+		break;
+        // This is the water type G-Mon
+    }
+    
+	case 'c':
+    {
+        
+        
+        cout << "You have selected ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+		cout << "Bud, the quick-witted plant type G-Mon\n\n\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+        cout << "Bud is a playful little creature that hides in ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+		cout << "bamboo trees";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "to play hide\n";
+		cout <<  "and go seek with the enemy, very difficult to discover.\n";
+        cout << "Treat him well...\n\n";
+		system ("pause");
+		system ("cls");
+		cout << "...or die a grisly death.\n\n";
+		system ("pause");
+		system ("cls");
+		break;
+        // This is the plant type G-Mon
+    }
+	}
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+        gems = gems + 100;
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+		cout << "Gems: ";
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << gems;
+        cout << "\nHeres an extra 100 ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+		cout << "gems ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "to get you started in the world of Gmon!\n\n";
+		cout << "Don't waste them, or I'll be mopping up your ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+		cout << "blood ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "sooner rather than later.\n\n";
+   
+	system ("pause");
+	system ("cls");
+		
+	
+	while ((choice != 'a' ) || (choice != 'b') || ( xchoice == 'n') || (xchoice != 'n') || (xchoice != 'y')|| (shopExit == 'y'))
+	{
+		
+    cout << "So, you have your new G-Mon. Remember, don't get too fond of it, " <<name1 << ".\n";
+	cout << "This isn't the South, and you certainly aren't a farmer.\n\n";
+    cout << "What would you like to do? Not that I care.\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+	cout << "Gems: ";
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+	cout << gems << "\n";
+    cout << "\t\ta. Lets go explore! \n";
+    cout << "\t\tb. Let's visit the shop. \n\n";
+	cout << "Well, what are you waiting for?\n\n";
+	cout << "Choose 'a' or 'b'. \n\nNOW, before I have to grab the hatchet.\n\n'a' or 'b': ";
+	
+    cin >> choice;
+	cout << "\n";
+	system ("pause");
+	system ("cls");
+	
+	if (choice == 'a')
+	{
+	
+		
+		do
+		{
+		
+			{
+         cout << "You begin exploring...aimlessly, like your life matters...\n...which it doesn't... obviously.\n\n";
+		 	   system ("pause");
+	   system ("cls");
+	   cout << "I mean, have you taken a look in the mirror lately?\n\n";
+	   cout << "What a tragedy.\n\n";
+	     system ("pause");
+		 system ("cls");
+		 srand(static_cast<unsigned int>(time(0)));	
+		 explore = rand() %10 + 1;
+		
+	   if ((explore == 1) || (explore == 3))
+	   {
+	   cout << "You find nothing. Figures, you're useless and subhuman.\n";
+	   cout << "Would you like to continue to explore? y/n";
+	   cin >> xchoice;
+       system ("pause");
+	   system ("cls");
+
+
+	   }
+	   else if ((explore == 2) || (explore == 4))
+	   {
+		   cout << "You find some treasure. Wooptie friggin' do.\n";
+           gems = gems + 15;
+		   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+		   cout << "Gems: ";
+           SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		   cout << gems << "\n";
+		   system ("pause");
+	       system ("cls");
+		   
+		   for (int i=0; i<numItems;++i)
+		   {
+			   cout << Bag [i];
+
+	       }
+		
+			 cout << "Would you like to continue to explore? y/n";
+			 cin >> xchoice;
+			 system ("pause");
+			system ("cls");
+	
+			}
+
+	   else if (explore == 5)
+	   {
+		   cout << "You found an item...\n\nNot that it really matters. \n\nYou'll be dead soon anyway.";
+		   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+		   Bag[numItems++] = "\tWazu Healing Potion\n";
+		   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		   healthpotion=healthpotion+1;
+		   system ("pause");
+	       system ("cls");
+         
+		   for (int i=0; i<numItems;++i)
+		   {
+			   cout << Bag [i];
+
+	       }
+		 
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		
+	      
+	   }
+	   else if (explore == 6)
+	   {
+		   cout << "You find an item...\nHope you're happy, you mistakenly did something of benefit.\n\n";
+		   	   system ("pause");
+	   system ("cls");
+	   cout << "That's right, you randomly found something and you did nothing to deserve it.\n\n";
+	   cout << "HOORAY\n\n";
+	   	   system ("pause");
+	       system ("cls");
+	   cout << "Seriously, wooooohoooo, way to go.\n\n";
+	   	   system ("pause");
+	       system ("cls");
+	   cout << "We should write you a theme song...\n\n";
+	   cout << "Because you are sooooo cool...\n\n";
+	   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		   Bag[numItems++] = "\t Wazu Power Potion\n";
+		   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		   powerpotion=powerpotion+1;
+		   for (int i=0; i<numItems;++i)
+		   {
+			   cout << Bag [i];
+		   }
+		
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		  
+	    
+	   }
+	   
+	   else if (explore == 7)
+	   {
+		   
+			   if (personality == 'a')
+			   {
+				   Dog.SetAttack1(EKitty.m_eHealth);
+			
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		   
+	         
+			   }
+			   else if (personality == 'b')
+			   {
+				   Turtle.SetAttack1(EKitty.m_eHealth);
+			
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		    
+			   }
+			   else  if (personality == 'c')
+			   {
+				   Plant.SetAttack1(EKitty.m_eHealth);
+			
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		 
+			   }
+		   
+
+	   }
+	   
+	   	   else if (explore == 8)
+		   {
+			   if (personality == 'a')
+			   {
+				   Dog.SetAttack2(EBlob.m_eHealth);
+			
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		  
+			   }
+			   else if (personality == 'b')
+			   {
+				   Turtle.SetAttack2(EBlob.m_eHealth);
+		
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		 
+			   }
+			   else  if (personality == 'c')
+			   {
+				   Plant.SetAttack2(EBlob.m_eHealth);
+		
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		   
+			   }
+		   
+
+	    }
+			   	   else if (explore == 9)
+		       {
+			   if (personality == 'a')
+			   {
+				   Dog.SetAttack3(EBat.m_eHealth);
+	
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		 
+			   }
+			   else if (personality == 'b')
+			   {
+				   Turtle.SetAttack3(EBat.m_eHealth);
+		
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+
+			   }
+			   else  if (personality == 'c')
+			   {
+				   Plant.SetAttack3(EBat.m_eHealth);
+			
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		     
+			   }
+		    
+				}
+		   	   else if (explore == 10)
+	      {
+		   
+			   if (personality == 'a')
+			   {
+				   Dog.SetAttack4(EGrr.m_eHealth);
+			
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		     
+			   }
+			   else if (personality == 'b')
+			   {
+				   Turtle.SetAttack4(EGrr.m_eHealth);
+				
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		          
+			   }
+			   else  if (personality == 'c')
+			   {
+				   Plant.SetAttack4(EGrr.m_eHealth);
+			
+			 cout << "Would you like to continue to explore? y/n";
+			cin >> xchoice;
+			 system ("pause");
+				system ("cls");
+		         
+			   }
+		   
+		   
+	   
+	}
+    }
+	}
+	while (xchoice == 'y');
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+    
+    	
+		   
+        
+//SHOP!!/////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+	 
+	
+	
+	 else if (choice == 'b')
+	{
+do
+	 {   
+		 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+		cout << "Gems: ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << gems << "\n";
+		
+        cout << "\tHey there! My name is Wazu, I'm the crazy merchant shopkeep!\n";
+        cout << "\tI've made some nice remedes for you today!\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+        cout << "\t\t a. Wazu Healing Medicine ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "40 ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+		cout << "Gems\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+        cout << "\t\t b. Wazu Power Potion ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+			cout << "80 ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+		cout << "Gems\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),4);
+        cout << "\t\t c. Wazu's Iron Skin ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+			cout << "80 ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+		cout << "Gems\n";
+        cin >> shopPick;
+        
+	 
+
+		
+			 if (shopPick == 'a')
+			 {
+				     	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+                     cout << "Gems: ";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+					 cout << gems << "\n";
+					 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+					 cout << "\tWazu Healing Medicine ";
+					 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+					 cout << "has Rat blood, Twingle berrys, and Robex Oil\n \tto help vitalize the heart and heal wounds extremely fast, this Medicine is very popular\n";
+					 cout << "\tWould you like to purchase this for 40 gem?\n";
+					 cout << "\t\t\tY or N\n";
+						cin >> healChoice;
+									
+			 if (healChoice == 'y' )
+			{
+			
+						if (gems >=40)
+						{
+						 gems = gems - 40;
+						 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+						 cout << "Gems: ";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+						 cout << gems << "\n";
+						 cout << "\tWAAAAAZZZZZUUUUU!!! Thanks for the purchase buddy here's your Healing Medicine\n";
+						 cout << "\tNow i can eat!\n";
+						 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12);
+						cout << "\t You have obtained Wazu's Healing Medicine\n";
+						Bag[numItems++] = "\tWazu Healing Potion\n";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+						healthpotion=healthpotion+1;
+						cout << "\t*************\n\tBag Items: \n\t*************\n";
+						 
+						 for (int i = 0; i < numItems; ++i)
+						{
+						cout << Bag [i];
+						}
+						 cout << "\n\n\n\tWould you like to exit Wazu's shop?\n\n";
+						 cout << "\t\t\tY or N\n";
+						cin >> shopExit;
+						
+						}
+						else if (gems < 40)
+						{
+								SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+						cout << "Gems: ";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+						cout << gems << "\n";	
+						cout << "No health potion for you! You have no Gems you imbecile!";
+						cout << "\n\n\n\tWould you like to exit Wazu's shop?\n\n";
+						cin >> shopExit;
+						
+						}
+			 }
+			
+	
+    
+			 else if (healChoice == 'n' )
+						 {
+						cout << "/twah wah zuuuuu.... /n";
+						cout << "\n\n\n\tWould you like to exit Wazu's shop?\n\n";
+						cout << "\t\t\tY or N\n";
+						 cin >> shopExit;
+						 
+						}
+			 
+		
+			 }
+		
+		
+				else if (shopPick == 'b')
+				{
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+				  cout << "Gems: ";
+				  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+				  cout << gems << "\n";
+				  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+				  cout << "\t Wazu Power Potion ";
+				  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+				  cout << "is made with a the heart of a dragon,\n \tsharp Plague thorn leaves and Ogre toe nails, its a nasty drink but with this you will be twice as strong for a certain amout of time/n ";
+				  cout << "\t Would you like to purchase this for 80 gem?\n";
+				  cout << "\t\t\tY or N\n";
+				  cin >> boostChoice;
+				  	
+			 if (boostChoice == 'y' )
+			{
+		
+						if (gems >= 80)
+						{
+						gems = gems - 80;
+							SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+						cout << "Gems: ";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+						cout << gems << "\n";	
+						cout << "\tWAAAAAZZZZZUUUUU!!! Thanks for the purchase buddy here's your ";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+						cout << "Power Potion!\n";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+				    	cout << "\tNow i wont get evicted!\n";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+					    cout << "\tYou have obtained Wazu's Power Potion\n";
+						Bag[numItems++] = "\tWazu Power Potion\n";
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+						cout << "\t*************\n\tBag Items: \n\t*************\n";
+						powerpotion=powerpotion+1;
+						for (int i = 0; i < numItems; ++i)
+						{
+						cout << Bag [i];
+						}
+						cout << "\n\n\n\tWould you like to exit Wazu's shop?\n\n";
+						cout << "\t\t\tY or N\n";
+						cin >> shopExit;
+						
+						}
+			 
+			else if (gems < 80 )
+						{
+								SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+						cout << "Gems: ";
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+						 cout << gems << "\n";
+						cout << "Wazu is very angry you would try to buy something and not have the gems!";
+						cout << "\n\n\n\tWould you like to exit Wazu's shop?\n\n";
+						cin >> shopExit;
+						
+						}
+
+		
+			}
+	
+    
+			else if (boostChoice == 'n')
+				 {
+				cout << "\twah wah zuuuuu.... \n";
+				cout << "\n\n\n\tWould you like to exit Wazu's shop?\n\n";
+				cout << "\t\t\tY or N\n";
+				cin >> shopExit;
+				
+				}
+			    
+					}
+            
+				 else if (shopPick == 'c')
+				 {
+					 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+				 cout << "Gems: ";
+				 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+				 cout << gems << "\n";
+				 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),4);
+				 cout << "\t Wazu's Iron Skin ";
+				 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+				 cout << "a coat of paint you apply to your body made of Rhino horns, \n \tElfen tree bark, dragon Scales, and Ogre numbing oils  this will make your skin as strong as an ox!\n \t... or just not feel pain for a little while not sure\n";
+				cout << "\t Would you like to purchase for 80 gem?\n";
+				cout << "\t\t\tY or N\n";
+				 cin >> ironChoice;
+				 	
+     if (ironChoice == 'y')
+    {
+		
+			if (gems >= 80)
+			{
+        gems = gems - 80;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+		cout << "Gems: ";
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << gems << "\n";	
+        cout << "\tWAAAAAZZZZZUUUUU!!! Thanks for the purchase buddy here's your ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),4);
+		cout << "Iron Skin\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+        cout << "\tNow i wont have to sell my donkey!\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),4);
+        Bag[numItems++] = "\tWazu's Iron Skin\n";
+        cout << "\ttYou hav e obtained Wazu's Iron Skin!\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+        cout << "\t*************\n\tBag Items: \n\t*************\n";
+        
+        ironskinpotion=ironskinpotion+1;
+        for (int i = 0; i < numItems; ++i)
+        {
+            cout << Bag [i];
+        }
+        cout << "\n\n\n\tWould you like to exit Wazu's shop?\n\n";
+        cout << "\t\t\tY or N\n";
+        cin >> shopExit;
+		
+			}
+			else if (gems < 80)
+			{   
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),3);
+				cout << "Gems: ";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+				cout << gems << "\n";
+					
+				cout << "Wazu is very sorry but it looks like you don't have any gems!";
+				cout << "\n\n\n\tWould you like to exit Wazu's shop?\n\n";
+						cin >> shopExit;
+						
+			}
+		
+         
+	 }
+    
+    else if (ironChoice == 'n' )
+    {
+        cout << "\twah wah zuuuuu....\n ";
+        cout << "\n\n\n\tWould you like to exit Wazu's shop?\n\n";
+        cout << "\t\t\tY or N\n";
+        cin >> shopExit; 
+		
+		
+    }
+	}
+				}
+	  while (shopExit == 'n');
+		system ("cls");
+    
+		
+	
+			 
+	
+
+	 }
+ 
+	 
+	 
+	  
+	  
+	}
+	
+
+	
+return 0;
+		}
+
+		
+		
+		
+	
+
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+  //SHOP END///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	
+	int enemyhealth;
+	int health;
+	int gpower;
+	
+	
+		
+int m_Powerpotion=powerpotion;
+int m_Healthpotion=healthpotion;
+int m_Ironskinpotion=ironskinpotion;
+
+void Gmon::SetAttack1(int m_eHealth)
+{
+	
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Kitty Kaaaat!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Kitty Kaaaaat!\t\t\t\t";
+        system("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Kitty Kaaaat!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Kitty Kaaaaat!\t\t\t\t";
+        system("cls");
+
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Kitty Kaaaat!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Kitty Kaaaaat!\t\t\t\t";
+        system("cls");
+
+
+		
+
+		
+		char attack = 'a' && 'b' && 'c' && 'd' && 'e';
+
+	
+
+	
+			
+			enemyhealth=m_eHealth;
+			health=m_Health;
+			gpower=m_Power;
+	while ((enemyhealth>0) && (health > 0))
+	{		
+	do
+		{			
+
+		system("cls");
+		
+
+		cout << "\n"
+			    "********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n\n\n";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemies health is " << enemyhealth << " \n"
+				" Power: " << gpower << "\n\n";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+cout << "\n\nPick your move " << m_Name << "\n";
+	    cout << "A. " << m_Move1;
+		cout << "\nB. " << m_Move2; 
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n15 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nC. " << m_Move3; 
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n30 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nD. " << m_Move4; 
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n50 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nE. Inventory ";
+		
+		
+		
+		  cin >> attack;
+		}
+		while ((attack != 'a') && (attack != 'b') && (attack != 'c') && (attack != 'd') && (attack != 'e'));
+	srand(static_cast<unsigned int>(time(0)));
+		
+		int enemy=rand();
+		int enemyattack=((enemy %4)+1);
+		   system ("cls");
+		   {
+				 if (attack == 'a')
+					{
+					 GetAttack1(EKitty.m_eHealth);
+					}
+		  
+				else if (attack == 'b')
+					{
+					 GetAttack2(EKitty.m_eHealth);
+					}
+				else if (attack == 'c')
+					{
+					GetAttack3(EKitty.m_eHealth);
+					}
+				 else if (attack == 'd')
+				 {
+				   GetAttack4(EKitty.m_eHealth);
+				 }
+				else if (attack == 'e')
+				{
+					 char invchoice = 'a' && 'b' && 'c';
+				while ((invchoice != 'a') && (invchoice != 'b') && (invchoice != 'c'))
+				{
+					 cout << "What item would you like to you use?\n"
+							 "A. Wazu Healing Potion: " << healthpotion <<
+							 "\nB. Power Potion: " << powerpotion <<
+							 "\nC. Iron Skin Potion: " << ironskinpotion << endl;
+					
+					 cin >> invchoice;
+				
+				}
+					 
+					 {
+						 if (invchoice == 'a')
+						 {
+							 {
+								 if (healthpotion > 0)
+								 {
+							 cout << "You use the Wazu Healing Potion and your Gmon heals 50 Points!";
+								 healthpotion=healthpotion-1; health=health+50;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (healthpotion <=0)
+								 {
+									 cout << "You do not have any healing potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+
+						 }
+						 else if (invchoice == 'b')
+						 {
+							 {
+								 if (powerpotion > 0)
+								 {
+							 cout << "You use the Power Potion and your Gmon gains 50 Power Points!";
+								 powerpotion=powerpotion-1; gpower=gpower+50;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (powerpotion <=0)
+								 {
+									 cout << "You do not have any Power potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+						 }
+						 else if (invchoice == 'c')
+						 {
+							 {
+								 if (ironskinpotion > 0)
+								 {
+							 cout << "You use Iron Skin Potion and your Gmon heals 100 Points!";
+								 ironskinpotion=ironskinpotion-1; health=health+100;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (ironskinpotion <=0)
+								 {
+									 cout << "You do not have any Iron Skin Potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+						 }
+					 }
+				 
+		
+				 
+		}
+		   
+		
+		   {
+		if (enemyattack == 1)
+		{
+			EKitty.GeteAttack1(m_Health);
+
+		}
+		
+		if (enemyattack == 2)
+		{
+			EKitty.GeteAttack2(m_Health);
+
+		}
+		
+		if (enemyattack == 3)
+		{
+			EKitty.GeteAttack3(m_Health);
+
+		}
+		
+		if (enemyattack == 4)
+		{
+			EKitty.GeteAttack4(m_Health);
+
+		}
+
+}
+}
+
+}
+}
+
+
+
+void Gmon::SetAttack2(int m_eHealth)
+{
+	
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Blob!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Blob!\t\t\t\t";
+        system("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Blob!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Blob!\t\t\t\t";
+        system("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Blob!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Blob!\t\t\t\t";
+        system("cls");
+
+		
+		char attack = 'a' && 'b' && 'c' && 'd' && 'e';
+
+	
+
+	
+			
+			enemyhealth=m_eHealth;
+			health=m_Health;
+			gpower=m_Power;
+	while ((enemyhealth>0) && (health > 0))
+	{		
+	do
+		{			
+
+		system("cls");
+		
+
+		cout << "\n"
+			    "********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n\n\n";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemies health is " << enemyhealth << " \n"
+				" Power: " << gpower << "\n\n";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+
+			cout << "\n\nPick your move " << m_Name << "\n";
+	    cout << "A. " << m_Move1;
+		cout << "\nB. " << m_Move2; 
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n15 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nC. " << m_Move3; 
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n30 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nD. " << m_Move4; 
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n50 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nE. Inventory ";
+		
+		
+		
+		
+		  cin >> attack;
+		}
+		while ((attack != 'a') && (attack != 'b') && (attack != 'c') && (attack != 'd') && (attack != 'e'));
+	srand(static_cast<unsigned int>(time(0)));
+		
+		int enemy=rand();
+		int enemyattack=((enemy %4)+1);
+		   system ("cls");
+		   {
+				 if (attack == 'a')
+					{
+					 GetAttack1(EBlob.m_eHealth);
+					}
+		  
+				else if (attack == 'b')
+					{
+					 GetAttack2(EBlob.m_eHealth);
+					}
+				else if (attack == 'c')
+					{
+					GetAttack3(EBlob.m_eHealth);
+					}
+				 else if (attack == 'd')
+				 {
+				   GetAttack4(EBlob.m_eHealth);
+				 }
+				else if (attack == 'e')
+				{
+					 char invchoice = 'a' && 'b' && 'c';
+				while ((invchoice != 'a') && (invchoice != 'b') && (invchoice != 'c'))
+				{
+					 cout << "What item would you like to you use?\n"
+							 "A. Wazu Healing Potion: " << healthpotion <<
+							 "\nB. Power Potion: " << powerpotion <<
+							 "\nC. Iron Skin Potion: " << ironskinpotion << endl;
+					
+					 cin >> invchoice;
+				
+				}
+					 
+					 {
+						 if (invchoice == 'a')
+						 {
+							 {
+								 if (healthpotion > 0)
+								 {
+							 cout << "You use the Wazu Healing Potion and your Gmon heals 50 Points!";
+								 healthpotion=healthpotion-1; health=health+50;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (healthpotion <=0)
+								 {
+									 cout << "You do not have any healing potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+
+						 }
+						 else if (invchoice == 'b')
+						 {
+							 {
+								 if (powerpotion > 0)
+								 {
+							 cout << "You use the Power Potion and your Gmon gains 50 Power Points!";
+								 powerpotion=powerpotion-1; gpower=gpower+50;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (powerpotion <=0)
+								 {
+									 cout << "You do not have any Power potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+						 }
+						 else if (invchoice == 'c')
+						 {
+							 {
+								 if (ironskinpotion > 0)
+								 {
+							 cout << "You use Iron Skin Potion and your Gmon heals 100 Points!";
+								 ironskinpotion=ironskinpotion-1; health=health+100;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (ironskinpotion <=0)
+								 {
+									 cout << "You do not have any Iron Skin Potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+						 }
+					 }
+				 
+		
+				 
+		}
+		   
+		
+		   {
+		if (enemyattack == 1)
+		{
+			EBlob.GeteAttack1(m_Health);
+
+		}
+		
+		if (enemyattack == 2)
+		{
+			EBlob.GeteAttack2(m_Health);
+
+		}
+		
+		if (enemyattack == 3)
+		{
+			EBlob.GeteAttack3(m_Health);
+
+		}
+		
+		if (enemyattack == 4)
+		{
+			EBlob.GeteAttack4(m_Health);
+
+		}
+
+}
+}
+
+}
+}
+
+
+
+
+void Gmon::SetAttack3(int m_eHealth)
+
+	{
+	
+		 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Bat!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Bat!\t\t\t\t";
+        system("cls");
+
+
+		 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Bat!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Bat!\t\t\t\t";
+        system("cls");
+		
+
+		 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Bat!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter Bat!\t\t\t\t";
+        system("cls");
+		char attack = 'a' && 'b' && 'c' && 'd' && 'e';
+
+
+		
+
+
+			
+			enemyhealth=m_eHealth;
+			health=m_Health;
+			gpower=m_Power;
+while ((enemyhealth>0) && (health > 0))
+{
+do
+		{
+
+			system("cls");
+			
+		
+		cout << "\n"
+			    "********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n\n\n";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemies health is " << enemyhealth << " \n"
+				" Power: " << gpower << "\n\n";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+cout << "\n\nPick your move " << m_Name << "\n";
+	    cout << "A. " << m_Move1;
+		cout << "\nB. " << m_Move2; 
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n15 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nC. " << m_Move3; 
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n30 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nD. " << m_Move4; 
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n50 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nE. Inventory ";
+		
+		
+		
+			
+		  cin >> attack;
+}
+		while ((attack != 'a') && (attack != 'b') && (attack != 'c') && (attack != 'd') && (attack != 'e'));
+srand(static_cast<unsigned int>(time(0)));
+		
+		int enemy=rand();
+		int enemyattack=((enemy %4)+1);
+		   system ("cls");
+		   {
+				 if (attack == 'a')
+					{
+					 GetAttack1(EBat.m_eHealth);
+					}
+		  
+				else if (attack == 'b')
+					{
+					 GetAttack2(EBat.m_eHealth);
+					}
+				else if (attack == 'c')
+					{
+					GetAttack3(EBat.m_eHealth);
+					}
+				 else if (attack == 'd')
+				 {
+				   GetAttack4(EBat.m_eHealth);
+				 }
+				else if (attack == 'e')
+				 {
+					 char invchoice = 'a' && 'b' && 'c';
+				while ((invchoice != 'a') && (invchoice != 'b') && (invchoice != 'c'))
+				{
+					 cout << "What item would you like to you use?\n"
+							 "A. Wazu Healing Potion: " << healthpotion <<
+							 "\nB. Power Potion: " << powerpotion <<
+							 "\nC. Iron Skin Potion: " << ironskinpotion << endl;
+					
+					 cin >> invchoice;
+				}
+					 
+					 {
+						 if (invchoice == 'a')
+						 {
+							 {
+								 if (healthpotion > 0)
+								 {
+							 cout << "You use the Wazu Healing Potion and your Gmon heals 50 Points!";
+								 healthpotion=healthpotion-1; health=health+50;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (healthpotion <=0)
+								 {
+									 cout << "You do not have any healing potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+
+						 }
+						 else if (invchoice == 'b')
+						 {
+							 {
+								 if (powerpotion > 0)
+								 {
+							 cout << "You use the Power Potion and your Gmon gains 50 Power Points!";
+								 powerpotion=powerpotion-1; gpower=gpower+50;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (powerpotion <=0)
+								 {
+									 cout << "You do not have any Power potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+						 }
+						 else if (invchoice == 'c')
+						 {
+							 {
+								 if (ironskinpotion > 0)
+								 {
+							 cout << "You use Iron Skin Potion and your Gmon heals 100 Points!";
+								 ironskinpotion=ironskinpotion-1; health=health+100;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (ironskinpotion <=0)
+								 {
+									 cout << "You do not have any Iron Skin Potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+						 }
+					 }
+				 
+				 }
+				 
+		
+					 
+				
+
+				 {
+		if (enemyattack == 1)
+		{
+			EBat.GeteAttack1(m_Health);
+
+		}
+		
+		if (enemyattack == 2)
+		{
+			EBat.GeteAttack2(m_Health);
+
+		}
+		
+		if (enemyattack == 3)
+		{
+			EBat.GeteAttack3(m_Health);
+
+		}
+		
+		if (enemyattack == 4)
+		{
+			EBat.GeteAttack4(m_Health);
+
+		}
+
+}
+}
+
+}
+
+}
+
+void Gmon::SetAttack4(int m_eHealth)
+
+	{
+    
+	 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter GGRRRRRRRRRRRRRR!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter GGRRRRRRRRRRRRRR!\t\t\t\t";
+        system("cls");
+
+		 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter GGRRRRRRRRRRRRRR!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter GGRRRRRRRRRRRRRR!\t\t\t\t";
+        system("cls");
+
+		 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter GGRRRRRRRRRRRRRR!\t\t\t\t\a";
+		system ("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7 | BACKGROUND_RED | BACKGROUND_INTENSITY);
+		cout << "\n\n\n\n\n \t\t\t  You encounter GGRRRRRRRRRRRRRR!\t\t\t\t";
+        system("cls");
+		
+
+
+		char attack = 'a' && 'b' && 'c' && 'd' && 'e';
+
+	
+
+	
+	
+			enemyhealth=m_eHealth;
+			health=m_Health;
+			gpower=m_Power;
+			
+        	while ((enemyhealth>0) && (health > 0))
+	{	 
+	do
+		{
+			system("cls");
+			
+		
+		cout << "\n"
+			    "********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n\n\n";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemies health is " << enemyhealth << " \n"
+				" Power: " << gpower << "\n\n";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+
+		cout << "\n\nPick your move " << m_Name << "\n";
+	    cout << "A. " << m_Move1;
+		cout << "\nB. " << m_Move2; 
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n15 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nC. " << m_Move3; 
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n30 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nD. " << m_Move4; 
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << "\n50 Power";
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+		cout << "\nE. Inventory ";
+		
+		
+		
+			
+		  cin >> attack;
+	}
+		while ((attack != 'a') && (attack != 'b') && (attack != 'c') && (attack != 'd') && (attack != 'e'));
+	srand(static_cast<unsigned int>(time(0)));
+		
+		int enemy=rand();
+		int enemyattack=((enemy %4)+1);
+		  system ("cls");
+		  {
+				 if (attack == 'a')
+					{
+					 GetAttack1(EGrr.m_eHealth);
+					}
+		  
+				else if (attack == 'b')
+					{
+					 GetAttack2(EGrr.m_eHealth);
+					}
+				else if (attack == 'c')
+					{
+					GetAttack3(EGrr.m_eHealth);
+					}
+				 else if (attack == 'd')
+				 {
+				   GetAttack4(EGrr.m_eHealth);
+				 }
+				else if (attack == 'e')
+			{
+                  char invchoice = 'a' && 'b' && 'c';
+				while ((invchoice != 'a') && (invchoice != 'b') && (invchoice != 'c'))
+				{
+					 cout << "What item would you like to you use?\n"
+							 "A. Wazu Healing Potion: " << healthpotion <<
+							 "\nB. Power Potion: " << powerpotion <<
+							 "\nC. Iron Skin Potion: " << ironskinpotion << endl;
+					 cin >> invchoice;
+				}
+					 {
+						 if (invchoice == 'a')
+						 {
+							 {
+								 if (healthpotion > 0)
+								 {
+							 cout << "You use the Wazu Healing Potion and your Gmon heals 50 Points!";
+								 healthpotion=healthpotion-1; health=health+50;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (healthpotion <=0)
+								 {
+									 cout << "You do not have any healing potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+
+						 }
+						 else if (invchoice == 'b')
+						 {
+							 {
+								 if (powerpotion > 0)
+								 {
+							 cout << "You use the Power Potion and your Gmon gains 50 Power Points!";
+								 powerpotion=powerpotion-1; gpower=gpower+50;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (powerpotion <=0)
+								 {
+									 cout << "You do not have any Power potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+						 }
+						 else if (invchoice == 'c')
+						 {
+							 {
+								 if (ironskinpotion > 0)
+								 {
+							 cout << "You use Iron Skin Potion and your Gmon heals 100 Points!";
+								 ironskinpotion=ironskinpotion-1; health=health+100;
+								 system("pause");
+								 system ("cls");
+								 }
+								 else if (ironskinpotion <=0)
+								 {
+									 cout << "You do not have any Iron Skin Potions";
+									 system("pause");
+									 system ("cls");
+								 }
+							 }
+						 }
+					 }
+				 
+		}
+		  }
+		
+					 
+		
+		 
+		  {
+		
+		if (enemyattack == 1)
+		{
+			EGrr.GeteAttack1(m_Health);
+
+		}
+		
+		if (enemyattack == 2)
+		{
+			EGrr.GeteAttack2(m_Health);
+
+		}
+		
+		if (enemyattack == 3)
+		{
+			EGrr.GeteAttack3(m_Health);
+
+		}
+		
+		if (enemyattack == 4)
+		{
+			EGrr.GeteAttack4(m_Health);
+
+		}
+
+
+
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+		
+													inline int Gmon::GetAttack1(int m_eHealth)
+													{
+														health=health;
+														
+												SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+														cout << m_Name << "attacks with "<< m_Move1 << "! \n\n"
+		
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n\n\n";
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+	system ("pause");
+	system ("cls");
+		cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t\t====>                                   ********\n"
+				"********                                                        ********\n"
+				"********                                                        ********\n\n";
+				
+
+		system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+	{
+		cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t\t\t=====>                          ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n\a";
+	}		
+		system ("cls");
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		{
+		cout << "\n\n********\t\t\t\t\t                ********\n"
+			    "********\t\t\t\t=======>                ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n";
+		}
+				
+		system ("cls");
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		{
+		cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t=========>      ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n";
+		}
+		
+		system ("cls");
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		{
+		cout << "\n\n********\t\t\t\t\t\t        ******** \n"
+				"********\t\t\t\t\t     ==========>********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n\a";
+		}
+				
+		system ("cls");
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		{
+		cout << "\n\n********\t\t\t\t\t\t\t ********\n"
+			    "********\t\t\t\t\t\t\t====******\n"
+				"********\t\t \t\t\t\t\t ********\n"
+				"******** \t\t\t\t\t\t\t ********\n\n";
+		}
+				
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		system ("cls");
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		{		
+		cout << "\n\n********\t\t\t\t\t\t\t    * *   ***\n"
+				"********\t\t\t\t\t\t\t      ***\n"
+				"********\t\t\t\t\t\t\t   *****\n"
+				"********\t\t\t\t\t\t\t********\n\n";
+		}
+				for (time_t t=time(0) +.7; time(0) < t; ) {}
+				system ("cls");
+				for (time_t t=time(0) +.7; time(0) < t; ) {}
+        enemyhealth=enemyhealth-m_Attack1;
+		{
+		cout << "\n\n********\t\t\t\t\t\t\t      **    *\n"
+				"********\t\t\t\t\t\t\t         *\n"
+				"********\t\t\t\t\t\t\t    **     *  **\n"
+				"********\t\t\t\t\t\t\t  ***   ** ***\n\n\a\a\a";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+
+		cout <<"You hit the enemy with " << m_Move1 << "and inflicts " << m_Attack1 << " points of damage! \n\n";
+		system ("pause");
+		system ("cls");
+		}
+
+														
+	
+	
+														
+														
+
+														return 0;
+													}
+
+													inline int Gmon::GetAttack2(int m_eHealth)
+													{
+														if (gpower < 15)
+														{
+															cout << "You do not have enough power to use " << m_Move2 << "!";
+															system ("pause");
+															return gpower=gpower;
+														}
+														else
+														{
+														gpower=gpower-15;
+														health=health;
+														SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+														cout <<cout << m_Name << "attacks with "<< m_Move2 << "! \n\n"
+		
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n\n\n";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+	    
+	system ("pause");
+	system ("cls");
+		cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t\t====>                                   ********\n"
+				"********                                                        ********\n"
+				"********                                                        ********\n\n";
+				
+
+		system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+		cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t\t\t=====>                          ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n\a";
+				
+		system ("cls");
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		cout << "\n\n********\t\t\t\t\t                ********\n"
+			    "********\t\t\t\t=======>                ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n";
+				
+		system ("cls");
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t=========>      ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n";
+		
+		system ("cls");
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		cout << "\n\n********\t\t\t\t\t\t        ******** \n"
+				"********\t\t\t\t\t     ==========>********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n\a";
+				
+		system ("cls");
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		cout << "\n\n********\t\t\t\t\t\t\t ********\n"
+			    "********\t\t\t\t\t\t\t====******\n"
+				"********\t\t \t\t\t\t\t ********\n"
+				"******** \t\t\t\t\t\t\t ********\n\n";
+				
+		for (time_t t=time(0) +.7; time(0) < t; ) {}
+		system ("cls");
+				for (time_t t=time(0) +.7; time(0) < t; ) {}
+				
+		cout << "\n\n********\t\t\t\t\t\t\t    * *   ***\n"
+				"********\t\t\t\t\t\t\t      ***\n"
+				"********\t\t\t\t\t\t\t   *****\n"
+				"********\t\t\t\t\t\t\t********\n\n";
+				
+				for (time_t t=time(0) +.7; time(0) < t; ) {}
+				system ("cls");
+				for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+				enemyhealth=enemyhealth-m_Attack2;
+		cout << "\n\n********\t\t\t\t\t\t\t      **    *\n"
+				"********\t\t\t\t\t\t\t         *\n"
+				"********\t\t\t\t\t\t\t    **     *  **\n"
+				"********\t\t\t\t\t\t\t  ***   ** ***\n\n\a\a\a";
+				
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+        cout << "You hit the enemy with " << m_Move2 << "and inflicts " << m_Attack2 << " points of damage! \n";
+		system ("pause");
+		system ("cls");
+
+														
+
+	
+														
+														
+														return 0;
+													}
+													}
+
+													inline int Gmon::GetAttack3(int m_eHealth)
+													{
+														if (gpower < 30)
+														{
+															cout << "You do not have enough power to use \n" << m_Move3 << "!";
+															system ("pause");
+															system ("cls");
+															return gpower=gpower;
+														}
+														else
+														{
+														gpower=gpower-30;
+
+														health=health;
+														SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+														cout << m_Name << "attacks with "<< m_Move3 << "! \n\n"
+	       "********                                           ********\n"
+           "********                                           ********\n"
+           "********                                           ********\n"
+           "********                                           ********\n";
+  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+		   system ("pause");
+		   system ("cls");
+		   
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+   cout <<"\n\n"
+	       "********     ____----_                             ********\n"
+           "******** *** --- ---+ >                            ********\n"
+           "********                                           ********\n"
+           "********                                           ********\n\a";
+   system ("cls");
+   for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	{
+   cout << "\n\n"
+	       "********            ____----_                      ********\n"
+           "********      ***** --- ---+ >                     ********\n"
+           "********                                           ********\n"
+           "********                                           ********\n";
+	}
+		   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	{
+   cout << "\n\n"
+	       "********                     ____----_              ********\n" 
+		   "********                ***** --- ---+ >            ********\n"
+		   "********                                            ********\n"
+		   "********                                            ********\n";
+	}
+		   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	{
+   cout << "\n\n"
+	       "********                           ____----_        ********\n"       
+		   "********                      ***** --- ---+ >      ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n\a";
+	}
+		   system ("cls"); 
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	{
+   cout << "\n\n"
+	       "********                                 ____----_   ********\n" 
+		   "********                            ***** --- ---+ > ********\n"
+		   "********					     ********\n"
+		   "********					     ********\n";
+	}
+		   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	{								
+	cout <<"\n\n"							    	                 "**\n"
+           "********                                       __---^^|||   ****\n"
+		   "********                                  ***** --- --   + **\n" 
+		   "********					     ** * * *\n"
+		   "********                                               * *******\n";
+	}
+		   
+		   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+enemyhealth=enemyhealth-m_Attack3;
+	{
+   cout << "\n\n"
+	       "********                                                 ---///| ***\n"
+		   "********                                                   ** - - - *\n"
+		   "********                                                      || *****\n\a\a\a"
+		   "********\n";
+		  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+		cout << "You hit the enemy with " << m_Move3 << "and inflicts " << m_Attack3 << " points of damage! \n";
+		system ("pause");
+		system ("cls");
+		   
+	}
+
+														
+														
+														return 0;
+													}
+													}
+
+													inline int Gmon::GetAttack4(int m_eHealth)
+
+													{
+														if (gpower < 50)
+														{
+															cout << "You do not have enough power to use " << m_Move4 << "!\n";
+															system ("pause");
+		                                                    system ("cls");
+		   
+															return gpower=gpower;
+														}
+														else
+														{
+														gpower=gpower-50;
+														health=health;
+														SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+														cout << m_Name << "attacks with "<< m_Move4 << "! \n\n"
+	       "********                                           ********\n"
+           "********                                           ********\n"
+           "********                                           ********\n"
+           "********                                           ********\n";
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+		   system ("pause");
+		   system ("cls");
+		   
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+   cout <<"\n\n"
+	       "********     ____----_                             ********\n"
+           "******** *** --- ---+ >                            ********\n"
+           "********                                           ********\n"
+           "********                                           ********\n\a";
+   system ("cls");
+   for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+   cout << "\n\n"
+	       "********            ____----_                      ********\n"
+           "********      ***** --- ---+ >                     ********\n"
+           "********                                           ********\n"
+           "********                                           ********\n";
+   
+		   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	{
+   cout << "\n\n"
+	       "********                     ____----_              ********\n" 
+		   "********                ***** --- ---+ >            ********\n"
+		   "********                                            ********\n"
+		   "********                                            ********\n";
+	}
+		   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	{
+   cout << "\n\n"
+	       "********                           ____----_        ********\n"       
+		   "********                      ***** --- ---+ >      ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n\a";
+	}
+		   system ("cls"); 
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	{
+   cout << "\n\n"
+	       "********                                 ____----_   ********\n" 
+		   "********                            ***** --- ---+ > ********\n"
+		   "********					     ********\n"
+		   "********					     ********\n";
+	}
+		   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	{								
+	cout <<"\n\n"							    	                 "**\n"
+           "********                                       __---^^|||   ****\n"
+		   "********                                  ***** --- --   + **\n" 
+		   "********					     ** * * *\n"
+		   "********                                               * *******\n";
+	}
+		   
+		   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	enemyhealth=enemyhealth-m_Attack4;
+	{
+   cout << "\n\n"
+	       "********                                                 ---///| ***\n"
+		   "********                                                   ** - - - *\n"
+		   "********                                                      || *****\n"
+		   "********\n\a\a\a";
+		   
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+		cout << "You hit the enemy with " << m_Move4 << "and inflicts " << m_Attack4 << " points of damage! \n";
+		system ("pause");
+		system ("cls");
+		   
+		   
+	}
+
+
+}
+													}
+
+	
+							        //This line is for enemy attacks.
+								inline int Gmon::GeteAttack1(int m_Health) //<---LEAVE THIS YOULL SEE WHY LATER
+								{
+									system ("cls");
+	                            srand(static_cast<unsigned int>(time(0)));
+								SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+								cout << "\n\n" << m_Name << " attempts to use " << m_Move1 << "\n"
+		
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n\n\n";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+					system ("pause");
+					system ("cls");
+		   
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t\t        ******** \n"
+				"********\t\t\t\t\t    <========== ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n\a";
+
+	system ("cls");
+
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t<=========      ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n";
+
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t                ********\n"
+			    "********\t\t\<=======    \t\t                ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n";
+
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t<===== \t\t\t                        ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n\a";
+
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********<====                   \t\t                ********\n"
+				"********                                                        ********\n"
+				"********                                                        ********\n\n";
+
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+	cout << "\n\n**      \t\t\t\t\t                ********\n"
+				"*  ***=====                     \t\t                ********\n"
+				"********                                                        ********\n"
+				"********                                                        ********\n\n";
+	
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+health=health-m_Attack1;
+	
+	cout << "\n\n**      \t\t\t\t\t                ********\n"
+				"*  *=======                     \t\t               ********\n"
+				"*****                                                           ********\n"
+				"******                                                          ********\n\n\a\a\a";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+
+	
+			cout <<			m_Name << " successfully does " << m_Move1 << " and inflicts " << m_Attack1 << " points of damage!\n" << endl;
+	system ("pause");
+		system ("cls");
+		   
+								
+								return 0;
+								}
+
+								inline int Gmon::GeteAttack2(int m_Health)
+								{
+									system ("cls");
+								srand(static_cast<unsigned int>(time(0)));
+								SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+								cout << "\n\n" << m_Name << " attempts to use " << m_Move2 << "\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n"
+				"********\t\t\t\t\t\t\t********\n\n\n";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+system ("pause");
+system ("cls");
+		   
+	
+
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t\t        ******** \n"
+				"********\t\t\t\t\t    <========== ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n\a";
+
+	system ("cls");
+
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t<=========      ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n";
+
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t                ********\n"
+			    "********\t\t\<=======    \t\t                ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n";
+
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********\t<===== \t\t\t                        ********\n"
+				"********\t\t\t\t\t                ********\n"
+				"********\t\t\t\t\t                ********\n\n\a";
+
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+cout << "\n\n********\t\t\t\t\t                ********\n"
+				"********<====                   \t\t                ********\n"
+				"********                                                        ********\n"
+				"********                                                        ********\n\n";
+
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+
+	cout << "\n\n**      \t\t\t\t\t                ********\n"
+				"*  ***=====                     \t\t                ********\n"
+				"********                                                        ********\n"
+				"********                                                        ********\n\n";
+	
+	system ("cls");
+	for (time_t t=time(0) +.7; time(0) < t; ) {}
+health=health-m_Attack2;
+	
+	cout << "\n\n**      \t\t\t\t\t                ********\n"
+				"*  *=======                     \t\t               ********\n"
+				"*****                                                           ********\n"
+				"******                                                          ********\n\n\a\a\a";
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+						cout << m_Name << " successfully does " << m_Move2 << " and inflicts " << m_Attack2 << " points of damage!\n" <<endl;
+						system ("pause");
+						system ("cls");
+		   
+								
+								return 0;
+								}
+
+								inline int Gmon::GeteAttack3(int m_Health)
+								{
+								srand(static_cast<unsigned int>(time(0)));
+								SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+									cout << "\n\n" << m_Name << " attempts to use " << m_Move3 << "\n"
+	       "********                                            ********\n"       
+		   "********                                            ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+		  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+	
+		   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+	   system ("pause");
+		system ("cls");
+		   
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout <<"\n\n"
+		   "********                                _----___    ********\n"       
+		   "********                              <+--- --- ************\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********                            _----___        ********\n"       
+		   "********                          <+--- --- ****    ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n\a";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********                        _----___            ********\n"       
+		   "********                      <+--- --- ****        ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********                   _----___                 ********\n"       
+		   "********                 <+--- --- ******           ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+
+	cout << "\n\n"
+	       "********                   _----___                 ********\n"       
+		   "********                 <+--- --- **** * *         ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n\a";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********              _----___                      ********\n"       
+		   "********            <+--- --- ****  * * *           ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	cout << "\n\n"
+	       "********         _----___                           ********\n"       
+		   "********       <+--- --- ****** * *                 ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********    _----___                                ********\n"       
+		   "********  <+--- --- ******** * * *                  ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n\a";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "**     _----___                                     ********\n"       
+		   "*****<+--- --- ******** * * *                       ********\n"
+		   "***                                                 ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "**     _----___                                     ********\n"       
+		   "***<+--- --- ******** * * *                         ********\n"
+		   "***                                                 ********\n" 
+		   "******                                              ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+health=health-m_Attack3;
+	cout << "\n\n"
+	       "                                                    ********\n"       
+		   "***                                                 ********\n"
+		   "***                                                 ********\n" 
+		   "* ** *                                              ********\n\a\a\a";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+
+		  cout << m_Name << " successfully does " << m_Move3 << " and inflicts " << m_Attack3 << " points of damage!\n" <<endl;
+						system ("pause");
+						system ("cls");
+		   
+								return  0;
+								
+								}
+		
+								inline int Gmon::GeteAttack4(int m_Health)
+								{
+								srand(static_cast<unsigned int>(time(0)));
+								SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+									cout << "\n\n" << m_Name << " attempts to use " << m_Move4 << "\n"
+	       "********                                            ********\n"       
+		   "********                                            ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+		   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+	   system ("pause");
+		system ("cls");
+		   
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout <<"\n\n"
+		   "********                                _----___    ********\n"       
+		   "********                              <+--- --- ************\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n\a";
+	system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********                            _----___        ********\n"       
+		   "********                          <+--- --- ****    ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********                        _----___            ********\n"       
+		   "********                      <+--- --- ****        ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********                   _----___                 ********\n"       
+		   "********                 <+--- --- ******           ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n\a";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+
+	cout << "\n\n"
+	       "********                   _----___                 ********\n"       
+		   "********                 <+--- --- **** * *         ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********              _----___                      ********\n"       
+		   "********            <+--- --- ****  * * *           ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+	cout << "\n\n"
+	       "********         _----___                           ********\n"       
+		   "********       <+--- --- ****** * *                 ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n\a";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "********    _----___                                ********\n"       
+		   "********  <+--- --- ******** * * *                  ********\n"
+		   "********                                            ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "**     _----___                                     ********\n"       
+		   "*****<+--- --- ******** * * *                       ********\n"
+		   "***                                                 ********\n" 
+		   "********                                            ********\n";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+
+	cout << "\n\n"
+	       "**     _----___                                     ********\n"       
+		   "***<+--- --- ******** * * *                         ********\n"
+		   "***                                                 ********\n" 
+		   "******                                              ********\n\a";
+	   system ("cls");
+	for (time_t t=time(0) +.8; time(0) < t; ) {}
+health=health-m_Attack4;
+	cout << "\n\n"
+	       "                                                    ********\n"       
+		   "***                                                 ********\n"
+		   "***                                                 ********\n" 
+		   "* ** *                                              ********\n\a\a\a";
+		   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),5);
+        cout << " Health: " << health << "                                       Your enemy's health is " << enemyhealth << " \n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
+		cout << " Power: "; 
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);  
+        cout << gpower << "\n\n";
+								cout << m_Name << " successfully does " << m_Move4 << " and inflicts " << m_Attack4 << " points of damage!\n" <<endl;
+								system ("pause");
+						         system ("cls");
+		   
+								return 0;
+								
+									}
